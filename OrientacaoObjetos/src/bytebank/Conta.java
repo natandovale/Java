@@ -5,10 +5,45 @@ public class Conta {
 	private double saldo;
 	private int agencia;
 	private int numero;
+	private static int total;
 	private Cliente titular;
 	
 	public double getSaldo() {
 		return saldo;
+	}
+	
+	public int getAgencia() {
+		return agencia;
+	}
+	
+	public void setAgencia(int agencia) {
+		if(agencia <= 0) {
+			System.out.println("Nao pode valor menor ou igual a zero!");
+			return;
+		}
+		this.agencia = agencia;
+	}
+	
+	public int getNumero() {
+		return numero;
+	}
+	
+	public void setNumero(int numero) {
+		if(numero <= 0) {
+			System.out.println("Nao pode valor menor ou igual a zero!");
+			return;
+		}
+		this.numero = numero;
+	}
+	
+	public static int getTotal() {
+		return total;
+	}
+	
+	public Conta(int agencia, int numero) {
+		this.agencia = agencia;
+		this.numero = numero;
+		total++;
 	}
 	
 	public void deposita(double valor) {
