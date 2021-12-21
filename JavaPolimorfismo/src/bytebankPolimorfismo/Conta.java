@@ -2,9 +2,9 @@ package bytebankPolimorfismo;
 
 import bytebankPolimorfismo.Cliente;
 
-public class Conta {
-	private double saldo;
-	private int agencia;
+public abstract class Conta {
+	protected double saldo;
+	protected int agencia;
 	private int numero;
 	private static int total;
 	private Cliente titular;
@@ -48,9 +48,7 @@ public class Conta {
 		total++;
 	}
 	
-	public void deposita(double valor) {
-		this.saldo += valor;
-	}
+	public abstract void deposita(double valor);
 	
 	public boolean saca(double valor) {
 		if(this.saldo >= valor) {
