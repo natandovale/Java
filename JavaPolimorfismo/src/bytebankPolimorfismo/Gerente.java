@@ -2,19 +2,23 @@ package bytebankPolimorfismo;
 
 public class Gerente extends Funcionario implements Autenticavel {
 	
+	private int senha;
+	
     public double getBonificacao() {
         return this	.getBonificacao() + super.getSalario();
     }
 
 	@Override
 	public void setSenha(int senha) {
-		// TODO Auto-generated method stub
-		
+		this.senha = senha;
 	}
 
 	@Override
 	public boolean autentica(int senha) {
-		// TODO Auto-generated method stub
-		return false;
+		if(this.senha == senha) {
+			return true;
+		}else {
+			return false;
+		}
 	}
 }
